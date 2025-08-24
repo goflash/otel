@@ -28,4 +28,4 @@ require (
 	golang.org/x/text v0.22.0 // indirect
 )
 
-replace github.com/goflash/flash/v2 => ../flash
+// replace github.com/goflash/flash/v2 => ../flash
