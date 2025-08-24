@@ -53,6 +53,7 @@ Go version: requires Go 1.23+. The module sets `go 1.23` and can be used with ne
 import (
     "github.com/goflash/flash/v2"
     "github.com/goflash/otel/v2"
+    "go.opentelemetry.io/otel/attribute"
 )
 
 func main() {
@@ -124,7 +125,7 @@ In addition to `AttributesFunc` configured on the middleware, you can attach att
 ```go
 import (
     "github.com/goflash/flash/v2"
-    otel "github.com/goflash/otel/v2"
+    "github.com/goflash/otel/v2"
     "go.opentelemetry.io/otel/attribute"
 )
 
@@ -196,6 +197,23 @@ func main() {
         log.Fatal(err)
     }
 }
+```
+
+## Examples
+
+Two runnable examples are included:
+
+- examples/basic: minimal setup with stdout exporter and the default middleware.
+- examples/complex: full-featured configuration (custom naming, filtering, status mapping, extra attributes, and duration).
+
+Try them locally (they use a replace to this module):
+
+```sh
+cd examples/basic && go run .
+# in another terminal
+curl -s localhost:8080/
+
+cd ../../examples/complex && go run .
 ```
 
 ## Versioning and compatibility
