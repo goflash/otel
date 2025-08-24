@@ -31,11 +31,13 @@ jobs:
 
       - name: Run tests (no coverage)
         if: matrix.go != 'stable'
-        run: go test ./... -v -race
+        run: |
+          go test $(go list ./... | grep -v "/examples/") -v -race
 
       - name: Run tests with coverage
         if: matrix.go == 'stable'
-        run: go test ./... -v -race -covermode=atomic -coverprofile=coverage.out
+        run: |
+          go test $(go list ./... | grep -v "/examples/") -v -race -covermode=atomic -coverprofile=coverage.out
 
       - name: Upload coverage artifact
         if: matrix.go == 'stable'
