@@ -1,7 +1,7 @@
 # OpenTelemetry middleware for the GoFlash web framework
 
 <h1 align="center">
-    <a href="https://pkg.go.dev/github.com/goflash/otel/v2.0.0">
+    <a href="https://pkg.go.dev/github.com/goflash/otel/v2">
         <img src="https://pkg.go.dev/badge/github.com/goflash/otel.svg" alt="Go Reference">
     </a>
     <a href="https://goreportcard.com/report/github.com/goflash/otel">
